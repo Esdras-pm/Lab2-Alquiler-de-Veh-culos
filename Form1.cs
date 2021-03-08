@@ -18,7 +18,20 @@ namespace Lab2_Alquiler_de_Vehículos
         {
             InitializeComponent();
         }
-
+        void mostrar(int c)
+        {
+            if(c==1)
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = carros;
+                dataGridView1.Refresh();
+                placa_txt.Text="";
+                marca_txt.Text = "";
+                /*modelo_txt.Text;
+                agregarc.Color = color_txt.Text;
+                agregarc.Preciopk = float.Parse(precio1_txt.Text);*/
+            }
+        }
         private void verVehículosAlquiladosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -31,9 +44,7 @@ namespace Lab2_Alquiler_de_Vehículos
             Vehiculos agregarc = new Vehiculos();
             int c = 0;
             for(int i=0;i<carros.Count;i++)
-            {
                 if (carros[i].Placa == placa_txt.Text) c++;
-            }
             if (c == 0)
             {
                 agregarc.Placa = placa_txt.Text;
@@ -41,8 +52,10 @@ namespace Lab2_Alquiler_de_Vehículos
                 agregarc.Modelo = modelo_txt.Text;
                 agregarc.Color = color_txt.Text;
                 agregarc.Preciopk = float.Parse(precio1_txt.Text);
+                carros.Add(agregarc);
+                
             }
-            
+
         }
     }
 }
