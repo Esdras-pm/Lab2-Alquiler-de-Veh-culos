@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab2_Alquiler_de_Vehículos
 {
-    class Facturas
+    class Facturas : Vehiculos
     {
         //Nombre del cliente, los datos del automóvil,
         //la fecha de devolución, y el total a pagar,  de todos los vehículos que están alquilados.

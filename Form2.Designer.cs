@@ -31,12 +31,12 @@ namespace Lab2_Alquiler_de_Vehículos
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.regresarAInicioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.krecorridos_txt = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.placa2_cbx = new System.Windows.Forms.ComboBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.fdevolucion_txt = new System.Windows.Forms.DateTimePicker();
-            this.falquiler_txt = new System.Windows.Forms.DateTimePicker();
+            this.fdevolucion_date = new System.Windows.Forms.DateTimePicker();
+            this.falquiler_date = new System.Windows.Forms.DateTimePicker();
             this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@ namespace Lab2_Alquiler_de_Vehículos
             this.regresarAInicioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(541, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(541, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,12 +66,12 @@ namespace Lab2_Alquiler_de_Vehículos
             this.regresarAInicioToolStripMenuItem.Text = "Regresar a Inicio";
             this.regresarAInicioToolStripMenuItem.Click += new System.EventHandler(this.regresarAInicioToolStripMenuItem_Click);
             // 
-            // textBox1
+            // krecorridos_txt
             // 
-            this.textBox1.Location = new System.Drawing.Point(197, 198);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(126, 22);
-            this.textBox1.TabIndex = 52;
+            this.krecorridos_txt.Location = new System.Drawing.Point(197, 198);
+            this.krecorridos_txt.Name = "krecorridos_txt";
+            this.krecorridos_txt.Size = new System.Drawing.Size(126, 22);
+            this.krecorridos_txt.TabIndex = 52;
             // 
             // label15
             // 
@@ -99,20 +99,20 @@ namespace Lab2_Alquiler_de_Vehículos
             this.label14.TabIndex = 49;
             this.label14.Text = "Placa";
             // 
-            // fdevolucion_txt
+            // fdevolucion_date
             // 
-            this.fdevolucion_txt.Location = new System.Drawing.Point(197, 169);
-            this.fdevolucion_txt.Name = "fdevolucion_txt";
-            this.fdevolucion_txt.Size = new System.Drawing.Size(251, 22);
-            this.fdevolucion_txt.TabIndex = 48;
+            this.fdevolucion_date.Location = new System.Drawing.Point(197, 169);
+            this.fdevolucion_date.Name = "fdevolucion_date";
+            this.fdevolucion_date.Size = new System.Drawing.Size(251, 22);
+            this.fdevolucion_date.TabIndex = 48;
             // 
-            // falquiler_txt
+            // falquiler_date
             // 
-            this.falquiler_txt.Location = new System.Drawing.Point(197, 141);
-            this.falquiler_txt.Name = "falquiler_txt";
-            this.falquiler_txt.Size = new System.Drawing.Size(251, 22);
-            this.falquiler_txt.TabIndex = 47;
-            this.falquiler_txt.ValueChanged += new System.EventHandler(this.falquiler_txt_ValueChanged);
+            this.falquiler_date.Location = new System.Drawing.Point(197, 141);
+            this.falquiler_date.Name = "falquiler_date";
+            this.falquiler_date.Size = new System.Drawing.Size(251, 22);
+            this.falquiler_date.TabIndex = 47;
+            this.falquiler_date.ValueChanged += new System.EventHandler(this.falquiler_txt_ValueChanged);
             // 
             // label13
             // 
@@ -167,6 +167,7 @@ namespace Lab2_Alquiler_de_Vehículos
             this.button1.TabIndex = 56;
             this.button1.Text = "Agregar Factura";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -179,6 +180,7 @@ namespace Lab2_Alquiler_de_Vehículos
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(541, 233);
             this.dataGridView1.TabIndex = 57;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Form2
             // 
@@ -190,12 +192,12 @@ namespace Lab2_Alquiler_de_Vehículos
             this.Controls.Add(this.nit_cbx);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.krecorridos_txt);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.placa2_cbx);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.fdevolucion_txt);
-            this.Controls.Add(this.falquiler_txt);
+            this.Controls.Add(this.fdevolucion_date);
+            this.Controls.Add(this.falquiler_date);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.menuStrip1);
@@ -214,18 +216,18 @@ namespace Lab2_Alquiler_de_Vehículos
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem regresarAInicioToolStripMenuItem;
-        private System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox krecorridos_txt;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ComboBox placa2_cbx;
+        public System.Windows.Forms.ComboBox placa2_cbx;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.DateTimePicker fdevolucion_txt;
-        private System.Windows.Forms.DateTimePicker falquiler_txt;
+        public System.Windows.Forms.DateTimePicker fdevolucion_date;
+        public System.Windows.Forms.DateTimePicker falquiler_date;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox nit_cbx;
+        public System.Windows.Forms.ComboBox nit_cbx;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }
